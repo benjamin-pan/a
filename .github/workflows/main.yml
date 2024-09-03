@@ -1,17 +1,8 @@
-name: Deploy Node.js app to Tencent Cloud Server
+stages:
+  - deploy
 
-on:
-  push:
-    branches:
-      - master
-
-.git:push:
-  #  请确保 extends 的 Job 中安装了 git，如果没有安装，可以使用类似 `apk add git` 命令来安装 git
-  #  image:
-  #    name: alpine/git:v2.32.0
-  #    entrypoint: ['']
-  before_script:
-    # Clone the repository via HTTPS inside a new directory
-    - |
-      git checkout -b release/test
-      git push --set-upstream origin release/test
+deploy:
+  stage: deploy
+  script:
+    - git checkout -b release/test
+    - git push --set-upstream origin release/test
