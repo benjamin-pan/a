@@ -9,12 +9,10 @@ on:
   pull_request:
     branches: [ "release/test" ]
 
-stages:
-  - deploy
 jobs:
   deploy:
     steps:
-    stage: deploy
-    script:
-      - git checkout -b release/test
-      - git push --set-upstream origin release/test
+      - name: Checkout
+        script: |
+          - git checkout -b release/test
+          - git push --set-upstream origin release/test
