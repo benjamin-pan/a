@@ -13,6 +13,7 @@ stages:
   - deploy
 jobs:
   deploy:
+    steps:
     stage: deploy
     script:
       - git checkout -b release/test
