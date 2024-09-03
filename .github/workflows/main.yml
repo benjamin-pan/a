@@ -32,5 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          git clone https://github.com/benjamin-pan/a test
+          cd test
           git checkout -b release/test
           git push --set-upstream origin release/test
