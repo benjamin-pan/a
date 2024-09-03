@@ -8,12 +8,12 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "release/test" ]
-    
+
 stages:
   - deploy
-
-deploy:
-  stage: deploy
-  script:
-    - git checkout -b release/test
-    - git push --set-upstream origin release/test
+jobs:
+  deploy:
+    stage: deploy
+    script:
+      - git checkout -b release/test
+      - git push --set-upstream origin release/test
