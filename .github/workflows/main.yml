@@ -7,10 +7,8 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: newBranch
-        uses: actions/checkout@v2
-        script: |
-          git checkout -b release/test
-          git push --set-upstream origin release/test
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: newBranch
+#        uses: actions/checkout@v2
+    script: git checkout -b release/test && git push --set-upstream origin release/test
